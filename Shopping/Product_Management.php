@@ -25,7 +25,7 @@
         <form name="frm" method="post" action="">
         <h1 style="text-align: center;">Product Management</h1>
         <p>
-            <a href="?page=add_product"><img src="images/add.png" alt="Thêm mới" width="16" height="16" border="0" />&nbsp;Add new</a>
+            <a href="?page=Add_product"><img src="images/add.png" alt="Thêm mới" width="16" height="16" border="0" />&nbsp;Add new</a>
         </p>
         <table id="tableproduct" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
@@ -48,7 +48,7 @@
             <?php
             include_once("connection.php");
             $No=1;
-            $result=pg_query($conn, "SELECT product_id, product_name, price, pro_qty, pro_image, cat_name
+            $result=pg_query($conn, "SELECT product_id, product_name, price,name_store, pro_qty, pro_image, cat_name
             FROM product a, category b
             WHERE a.cat_id = b.cat_id ORDER BY prodate DESC");
             while($row=pg_fetch_array($result, NULL, PGSQL_ASSOC)){	
